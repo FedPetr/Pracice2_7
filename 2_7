@@ -13,5 +13,74 @@ int main(int argc, char* argv[])
     system("pause");
     return 0;
     
+
+
 Задание 2.
 
+#include <iostream>
+#include <windows.h>
+#include <string> 
+#include <fstream> 
+
+using namespace std; 
+
+int main(){
+    SetConsoleOutputCP(CP_UTF8);
+    string a; 
+    ifstream file("MementoMori.txt"); 
+
+    while(getline(file, a)){ 
+        cout << a << endl; 
+    }
+
+    file.close(); 
+
+    return 0;
+}
+
+
+
+Задание 3.
+
+#include <iostream>
+#include <windows.h>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main(){
+    SetConsoleOutputCP(CP_UTF8);
+    string s;
+    ifstream file("MementoMori.txt");
+    int n = 255;
+    char* buffer = new char[n+1];
+    buffer[n]=0;
+    file.get(buffer,n);
+    cout << buffer;
+
+    file.close();
+
+    return 0;
+}
+
+
+
+
+Задание 5.
+
+#include <windows.h>
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    SetConsoleOutputCP(CP_UTF8);
+    ofstream fout("LookBack.txt");
+    string a;
+    cin >> a;
+    fout << a;
+    fout.close();
+    system("pause");
+    return 0;
+}
